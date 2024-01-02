@@ -1,5 +1,6 @@
 
   import React from "react";
+  import Svgs from "./pokesvg"
 
   export default function Home(){
     return (
@@ -45,7 +46,7 @@
                 <div className="absolute w-[25px] h-[6px] top-[9px] left-0 bg-[#b21919] border-[0.7px] border-solid border-black" />
                 <div className="absolute w-[25px] h-[6px] top-[18px] left-0 bg-[#b21919] border-[0.7px] border-solid border-black" />
               </div>
-              <div className="w-[568px] h-[319px] top-[80px] left-[40px] bg-[#282c34] absolute rounded-[20px]" />
+              <div className=" w-[568px] h-[319px] top-[80px] left-[40px] bg-[#282c34] absolute rounded-[20px]" ><Svgs svg="/poke/bug.svg"/></div>
             </div>
           </div>
           <div className="w-[676px] h-[165px] top-[230px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px]" />

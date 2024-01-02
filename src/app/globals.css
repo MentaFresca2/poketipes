@@ -1,0 +1,15 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+body {
+    margin: 0;
+    overflow: hidden; 
+  }
+#slider {
+    display: none;
+}

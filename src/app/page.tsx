@@ -5,6 +5,7 @@
   export default function Home(){
     return (
       <div className="bg-[#1E1E1E] flex flex-row justify-center w-full">
+        <Svgs svg="/poke/bug.svg"/>
       <div className="bg-[#ce1212] w-[1661px] h-[912px]">
         <div className="relative h-[912px]">
           <div className="absolute w-[42px] h-[42px] top-[767px] left-[121px] bg-[#141414] rounded-[21px]" />
@@ -46,7 +47,7 @@
                 <div className="absolute w-[25px] h-[6px] top-[9px] left-0 bg-[#b21919] border-[0.7px] border-solid border-black" />
                 <div className="absolute w-[25px] h-[6px] top-[18px] left-0 bg-[#b21919] border-[0.7px] border-solid border-black" />
               </div>
-              <div className=" w-[568px] h-[319px] top-[80px] left-[40px] bg-[#282c34] absolute rounded-[20px]" ><Svgs svg="/poke/bug.svg"/></div>
+              <div className=" w-[568px] h-[319px] top-[80px] left-[40px] bg-[#282c34] flex absolute rounded-[20px]" ></div>
             </div>
           </div>
           <div className="w-[676px] h-[165px] top-[230px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px]" />

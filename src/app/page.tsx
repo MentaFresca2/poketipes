@@ -8,8 +8,8 @@
         <Svgs svg="/poke/bug.svg" posini={100} posfin={100}/><Svgs svg="/poke/electric.svg" posini={100} posfin={100}/>
       <div className="bg-[#C71212] w-[1661px] h-[912px] border-[#6D0000] border-2">
         <div className="relative h-[912px]">
-          <div className="absolute w-[42px] h-[42px] top-[767px] left-[121px] border-2 border-[#000000] bg-[#141414] rounded-[21px]" />
-          <div className="absolute w-[31px] h-[32px] top-[776px] left-[1594px] bg-[#bca900] rounded-full border-[3px] border-solid border-[#1e1e1e]" />
+          <div className="absolute w-[42px] h-[42px] top-[767px] left-[121px] border-2 border-[#000000] bg-[#141414] rounded-[21px] shadow-plane" />
+          <div className="absolute w-[31px] h-[32px] top-[776px] left-[1594px] bg-[#bca900] rounded-full border-[2px] border-solid border-[#000000] shadow-plane" />
           <div className="absolute w-[1661px] h-[912px] top-0 left-0">
             <div className="absolute w-[384px] h-[106px] top-[33px] left-[40px]">
               <div className=" bg-gradient-radial absolute w-[118px] h-[118px] top-[-6px] left-[-6px] rounded-full border-[6px] border-solid border-[#1e1e1e]" />
@@ -27,12 +27,12 @@
           </div>
           <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px]" alt="Rectangle" src="rectangle-7.svg" />
           <img
-            className="absolute w-[68px] h-[16px] top-[735px] left-[1454px]"
+            className="absolute w-[109px] h-[56px] top-[735px] left-[1454px]"
             alt="Rectangle"
             src="rectangle-19.svg"
           />
           <img
-            className="absolute w-[69px] h-[16px] top-[735px] left-[1562px]"
+            className="absolute w-[109px] h-[56px] top-[735px] left-[1562px]"
             alt="Rectangle"
             src="rectangle-20.svg"
           />
@@ -52,7 +52,7 @@
           </div>
           <div className="w-[676px] h-[165px] top-[230px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-Lcustom-blue " />
           <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue" />
-          <img className="absolute w-[115px] h-[115px] top-[758px] left-[580px]" alt="Vector" src="vector-6.svg" />
+          <img className="absolute w-[215px] h-[215px] top-[758px] left-[580px]" alt="Vector" src="vector-6.svg" />
           <img className="absolute w-[149px] h-[75px] top-[742px] left-[955px]" alt="Group" src="group-5.png" />
           <img className="absolute w-[676px] h-[270px] top-[441px] left-[955px]" alt="Group" src="group-4.png" />
           <div className="w-[256px] h-[63px] top-[832px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue" />

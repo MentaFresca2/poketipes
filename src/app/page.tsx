@@ -50,11 +50,11 @@
               <div className=" w-[568px] h-[319px] top-[80px] left-[40px] bg-[#282c34] flex absolute rounded-[20px] shadow-custom-blue" ></div>
             </div>
           </div>
-          <div className="w-[676px] h-[165px] top-[230px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-Lcustom-blue " />
+          <div className="w-[676px] h-[205px] top-[230px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-Lcustom-blue " />
           <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue" />
           <img className="absolute w-[215px] h-[215px] top-[758px] left-[580px]" alt="Vector" src="vector-6.svg"/>
           <img className="absolute w-[149px] h-[75px] top-[742px] left-[955px]" alt="Group" src="group-5.png" />
-          <img className="absolute w-[676px] h-[270px] top-[441px] left-[955px]" alt="Group" src="blu.svg" />
+          <img className="absolute w-[676px] h-[270px] top-[451px] left-[955px]" alt="Group" src="blu.svg" />
           <div className="w-[256px] h-[63px] top-[832px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue" />
           <div className="w-[256px] h-[63px] top-[832px] left-[1375px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue" />
         </div>

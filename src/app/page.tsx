@@ -4,7 +4,8 @@
 
   export default function Home(){
     return (
-      <div className="bg-[#1E1E1E] flex flex-row justify-center w-full">
+      <div className="flex flex-row justify-center">
+      <div className="bg-[#1E1E1E]">
         <Svgs svg="/poke/bug.svg" posini={100} posfin={100}/><Svgs svg="/poke/electric.svg" posini={100} posfin={100}/>
       <div className="bg-[#ce1313] w-[1661px] h-[912px] border-[#6D0000] border-2">
         <div className="relative h-[912px]" >
@@ -60,5 +61,6 @@
         </div>
       </div>
     </div>
+  </div>
     );
   };

@@ -6,7 +6,7 @@
     return (
       <div className="flex flex-row justify-center">
       <div className="bg-[#1E1E1E]">
-        <Svgs svg="/poke/bug.svg" posini={100} posfin={100}/><Svgs svg="/poke/electric.svg" posini={100} posfin={100}/>
+        
       <div className="bg-[#ce1313] w-[1661px] h-[912px] border-[#6D0000] border-2">
         <div className="relative h-[912px]" >
           <div className="absolute w-[42px] h-[42px] top-[767px] left-[121px] border-2 border-[#000000] bg-[#141414] rounded-[21px] shadow-plane" />
@@ -26,7 +26,12 @@
               <div className="absolute w-[100px] h-[28px] top-[795px] left-0 [background:linear-gradient(90deg,rgb(109.44,0,0)_0%,rgba(109.44,0,0,0.57)_51.56%,rgb(109.44,0,0)_100%)]" />
             </div>
           </div>
-          <div className=" h-[20px] w-[20px]" ><img className="absolute w-[108px] h-[56px] top-[751px] left-[177px]" alt="Rectangle" src="rectangle-7.svg" /> </div>
+          <div className=" h-[20px] w-[20px]" >
+          <Svgs svg="/poke/bug.svg"      posini={[210,330]} posfin={[100,100]}/>
+          <Svgs svg="/poke/electric.svg" posini={[130,330]} posfin={[100,100]}/> 
+          
+          
+          </div>
           <img
             className="absolute w-[109px] h-[56px] top-[735px] left-[1454px]"
             alt="Rectangle"
@@ -38,6 +43,7 @@
             src="rectangle-20.svg"
           />
           <img className="absolute w-[108px] h-[56px] top-[751px] left-[286px]" alt="Rectangle" src="rectangle-8.svg" />
+          <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px]" alt="Rectangle" src="rectangle-7.svg" />
           <div className="absolute w-[650px] h-[469px] top-[242px] left-[87px]">
             <div className="relative w-[716px] h-[517px] bg-[url(/vector-5.svg)] bg-[100%_100%] bg-no-repeat bg-contain ">
               <div className="absolute w-[30px] h-[29px] top-[420px] left-[38px] bg-[#b21818] rounded-full border-2 border-solid border-[#1e1e1e] shadow-lin" />

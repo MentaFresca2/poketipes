@@ -26,7 +26,7 @@
               <div className="absolute w-[100px] h-[28px] top-[795px] left-0 [background:linear-gradient(90deg,rgb(109.44,0,0)_0%,rgba(109.44,0,0,0.57)_51.56%,rgb(109.44,0,0)_100%)]" />
             </div>
           </div>
-          <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px]" alt="Rectangle" src="rectangle-7.svg" />
+          <div className=" h-[20px] w-[20px]" ><img className="absolute w-[108px] h-[56px] top-[751px] left-[177px]" alt="Rectangle" src="rectangle-7.svg" /> </div>
           <img
             className="absolute w-[109px] h-[56px] top-[735px] left-[1454px]"
             alt="Rectangle"

@@ -1,5 +1,6 @@
-import React from 'react';
-import internal from 'stream';
+
+'use client'
+import { useState } from 'react';
 
 
 
@@ -7,17 +8,16 @@ import internal from 'stream';
 
 
 
-
-type SvgsProps = {
+type SvgsProps = { // Los tipos de lo que se le pase.
     svg: string;
     posini:number[];
     posfin:number[];
   };
 
 
-const Svgs: React.FC<SvgsProps> = ({ svg,posini,posfin }) => { //FC significa function component y dentro tiene que es un string (el tipo de arriba) 
+const Svgs: React.FC<SvgsProps> = ({ svg,posini,posfin }) => { // FC significa function component y dentro tiene que es un string (el tipo de arriba) 
 
-  console.log(svg.includes("bug"))
+  const [pulsado, setpulsado] = useState("")
 
 
 

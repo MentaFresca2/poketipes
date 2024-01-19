@@ -1,8 +1,25 @@
-
-  import React from "react";
+'use client'
+  import React, { useState } from 'react';
   import Svgs from "./pokesvg"
 
+
+
+
   export default function Home(){
+   
+    
+    const [cuantos, setCuantos] = useState<number>(0);
+
+    const sitio = (newPulsado: boolean) => {
+      setCuantos((prevCuantos: number) => (newPulsado ? prevCuantos + 1 : prevCuantos - 1));
+      
+      
+    };
+
+
+
+
+
     return (
       <div className="flex flex-row justify-center">
       <div className="bg-[#1E1E1E]">
@@ -27,9 +44,36 @@
             </div>
           </div>
           <div className=" h-[20px] w-[20px]" >
-          <Svgs svg="/poke/bug.svg"      posini={[210,330]} posfin={[100,100]}/>
-          <Svgs svg="/poke/electric.svg" posini={[130,330]} posfin={[100,100]}/> 
-          
+
+
+
+
+
+
+          <Svgs ids={"electric"} svg="/poke/electric.svg" posini={[160, 330]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"bug"} svg="/poke/bug.svg"           posini={[240, 330]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"water"} svg="/poke/water.svg"       posini={[320, 330]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"ground"} svg="/poke/ground.svg"     posini={[400, 330]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"dragon"} svg="/poke/dragon.svg"     posini={[480, 330]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"dark"} svg="/poke/dark.svg"         posini={[560, 330]} cuantos={cuantos} onPulsado={sitio}/>
+         
+
+
+          <Svgs ids={"fairy"} svg="/poke/fairy.svg"       posini={[160, 430]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"fighting"} svg="/poke/fighting.svg" posini={[240, 430]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"fire"} svg="/poke/fire.svg"         posini={[320, 430]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"flying"} svg="/poke/flying.svg"     posini={[400, 430]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"ghost"} svg="/poke/ghost.svg"       posini={[480, 430]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"grass"} svg="/poke/grass.svg"       posini={[560, 430]} cuantos={cuantos} onPulsado={sitio}/>
+
+
+
+          <Svgs ids={"ice"} svg="/poke/ice.svg"           posini={[160, 530]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"normal"} svg="/poke/normal.svg"     posini={[240, 530]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"poison"} svg="/poke/poison.svg"     posini={[320, 530]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"psychic"} svg="/poke/psychic.svg"   posini={[400, 530]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"steel"} svg="/poke/steel.svg"       posini={[480, 530]} cuantos={cuantos} onPulsado={sitio}/>
+         
           
           </div>
           <img

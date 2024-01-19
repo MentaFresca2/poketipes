@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      
       boxShadow: {
         'custom-blue': 'inset 0px -1px 24px rgba(0, 0, 0, 1)', 
         'Lcustom-blue': 'inset 0px -1px 24px rgba(0, 0, 0, 0.5)',

@@ -1,22 +1,257 @@
 'use client'
-  import React, { useState } from 'react';
+  import React, { useState, useEffect } from 'react';
   import Svgs from "./pokesvg"
+  import Svgs2 from "./pokesvg2"
+  import poketipes from "./poketipes.json"
+  import "./globals.css"
 
-
-
-
+  type TypeChart = {
+    [attackerType: string]: {
+      [defenderType: string]: number;
+    };
+  };
+  
+  function getTypesWeakerThanOne(typeChart: TypeChart, actual: string): string[] {
+    const weakerTypes: string[] = [];
+  
+    for (const attackerType in typeChart) {
+      const defenderTypes = typeChart[attackerType];
+  
+      
+      if (attackerType === actual) {
+        for (const defenderType in defenderTypes) {
+          if (defenderTypes[defenderType] < 1) {
+            weakerTypes.push(defenderType);
+          }
+        }
+      }
+    }
+  
+    return Array.from(new Set(weakerTypes));
+  }
+  
   export default function Home(){
-   
+    const [mostrado, setmostrado] = useState<boolean>(true)
     
     const [cuantos, setCuantos] = useState<number>(0);
-
-    const sitio = (newPulsado: boolean) => {
+    //cuantos tipos activos hay:
+    const sitio = (newPulsado: boolean) => { 
       setCuantos((prevCuantos: number) => (newPulsado ? prevCuantos + 1 : prevCuantos - 1));
       
+
+    }
+  const [listaElemento, setListaElemento] = useState<Record<string,string | null>>({})
+
+  const [elemento, setElemento] = useState<HTMLElement | null>(null);
+
+
+  const clicked = (ids:string, pulsado:boolean)=>{
+    if(cuantos < 2 && !pulsado){
+
+    const elementoActual = document.getElementById(ids);
+    setElemento(elementoActual)
+    setListaElemento((prevlistaElemento) => ({
+      ...prevlistaElemento,
+      [ids]: ids
+    }));
+   
+    }
+    if(pulsado){
+      setListaElemento((prevlistaElemento) => ({
+        ...prevlistaElemento,
+        [ids]: null
+      }));
+    }
+  } 
+ 
+  const ventanaid = "ventanaDos";
+  useEffect(() => {
+
+
+
+
+
+
+
+
+    const ventana = document.getElementById(ventanaid);
+    const flying2 = document.getElementById("flying2");
+    const bug2 = document.getElementById("bug2");
+    const dark2 = document.getElementById("dark2");
+    const dragon2 = document.getElementById("dragon2");
+    const electric2 = document.getElementById("electric2");
+    const fairy2 = document.getElementById("fairy2");
+    const fighting2 = document.getElementById("fighting2");
+    const fire2 = document.getElementById("fire2");
+    const ghost2 = document.getElementById("ghost2");
+    const grass2 = document.getElementById("grass2");
+    const ground2 = document.getElementById("ground2");
+    const ice2 = document.getElementById("ice2");
+    const normal2 = document.getElementById("normal2");
+    const poison2 = document.getElementById("poison2");
+    const psychic2 = document.getElementById("psychic2");
+    const rock2 = document.getElementById("rock2");
+    const steel2 = document.getElementById("steel2");
+    const water2 = document.getElementById("water2");
+ 
+    
+
+    var json:TypeChart = poketipes;
+    
+if(!mostrado){
+  
+  for (var elements in listaElemento) {
+    if(listaElemento[elements] != null){
+        
+    const mostrar = getTypesWeakerThanOne(json, elements)
       
-    };
+        
+    for (var x in mostrar){
+      
+      var actual = document.getElementById((mostrar[x]) + "2");
+      if(actual){
+          actual.style.display = "flex" 
+        }
+      }
+    }
+  }
+  setmostrado(true)
+}else{
+ 
+  
+  for (var elements in listaElemento) {
+    
+    if(listaElemento[elements] == null){
+        
+    const mostrar = getTypesWeakerThanOne(json, elements)
+      
+        
+    for (var x in mostrar){
+      
+      var actual = document.getElementById((mostrar[x]) + "2");
+      if(actual){
+          actual.style.display = "none"; 
+        }
+      }
+    }
+  }
 
 
+  setmostrado(false)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+   
+   /* for (var elements in listaElemento) {
+    
+      if(elements != null){
+        for (var tipo in json) {
+          json.[tipo]
+
+
+        }
+      }
+    }*/ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+/*
+    if(listaElemento["electric"] && ventana && flying2 && steel2){
+      flying2.style.display = "flex";
+      steel2.style.display = "flex";
+      
+    }else{
+    if(listaElemento["water"] && ventana && steel2 && fire2 && ice2){
+      ice2.style.display = "flex";
+      fire2.style.display = "flex";
+      steel2.style.display = "flex";
+     
+    }else {
+    if(bug2 && bug2.style.display == "flex"){
+      bug2.style.display =    "none";
+    }if(dark2 && dark2.style.display == "flex"){
+      dark2.style.display =   "none";
+    } if (dragon2 && dragon2.style.display == "flex")
+      {dragon2.style.display =  "none";}
+       if (electric2 && electric2.style.display == "flex")
+      {electric2.style.display =    "none";}
+       if (fairy2 && fairy2.style.display == "flex")
+      {fairy2.style.display =   "none";}
+       if (fighting2 && fighting2.style.display == "flex")
+      {fighting2.style.display =  "none";}
+       if (fire2 && fire2.style.display == "flex")
+      {fire2.style.display =    "none";}
+       if (flying2 && flying2.style.display == "flex") 
+      {flying2.style.display =   "none"; }
+       if (ghost2 && ghost2.style.display == "flex")
+      {ghost2.style.display =  "none";}
+       if (grass2 && grass2.style.display == "flex")
+      {grass2.style.display =    "none";}
+       if (ground2 && ground2.style.display == "flex")
+      {ground2.style.display =   "none";}
+       if (ice2 && ice2.style.display == "flex")
+      {ice2.style.display =  "none";}
+       if (normal2 && normal2.style.display == "flex")
+      {normal2.style.display =    "none";}
+       if (poison2 && poison2.style.display == "flex")
+      {poison2.style.display =   "none";}
+      if (psychic2 && psychic2.style.display == "flex")
+      {psychic2.style.display =  "none";}
+       if (rock2 && rock2.style.display == "flex")
+      {rock2.style.display =    "none";}
+       if (steel2 && steel2.style.display == "flex")
+      {steel2.style.display =   "none";}
+       if (water2 && water2.style.display == "flex")
+      {water2.style.display =  "none";}
+  }
+}
+    */
+
+
+
+
+
+    
+    
+
+
+
+  },[cuantos]);
+
+
+
+
+const display = true;
 
 
 
@@ -50,29 +285,29 @@
 
 
 
-          <Svgs ids={"electric"} svg="/poke/electric.svg" posini={[160, 330]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"bug"} svg="/poke/bug.svg"           posini={[240, 330]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"water"} svg="/poke/water.svg"       posini={[320, 330]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"ground"} svg="/poke/ground.svg"     posini={[400, 330]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"dragon"} svg="/poke/dragon.svg"     posini={[480, 330]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"dark"} svg="/poke/dark.svg"         posini={[560, 330]} cuantos={cuantos} onPulsado={sitio}/>
-         
-
-
-          <Svgs ids={"fairy"} svg="/poke/fairy.svg"       posini={[160, 430]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"fighting"} svg="/poke/fighting.svg" posini={[240, 430]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"fire"} svg="/poke/fire.svg"         posini={[320, 430]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"flying"} svg="/poke/flying.svg"     posini={[400, 430]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"ghost"} svg="/poke/ghost.svg"       posini={[480, 430]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"grass"} svg="/poke/grass.svg"       posini={[560, 430]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"electric"} svg="/poke/electric.svg" posini={[160, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"bug"} svg="/poke/bug.svg"           posini={[240, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"water"} svg="/poke/water.svg"       posini={[320, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"ground"} svg="/poke/ground.svg"     posini={[400, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"dragon"} svg="/poke/dragon.svg"     posini={[480, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"dark"} svg="/poke/dark.svg"         posini={[560, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
 
 
 
-          <Svgs ids={"ice"} svg="/poke/ice.svg"           posini={[160, 530]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"normal"} svg="/poke/normal.svg"     posini={[240, 530]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"poison"} svg="/poke/poison.svg"     posini={[320, 530]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"psychic"} svg="/poke/psychic.svg"   posini={[400, 530]} cuantos={cuantos} onPulsado={sitio}/>
-          <Svgs ids={"steel"} svg="/poke/steel.svg"       posini={[480, 530]} cuantos={cuantos} onPulsado={sitio}/>
+          <Svgs ids={"fairy"} svg="/poke/fairy.svg"       posini={[160, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"fighting"} svg="/poke/fighting.svg" posini={[240, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"fire"} svg="/poke/fire.svg"         posini={[320, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"flying"} svg="/poke/flying.svg"     posini={[400, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"ghost"} svg="/poke/ghost.svg"       posini={[480, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"grass"} svg="/poke/grass.svg"       posini={[560, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+
+
+
+          <Svgs ids={"ice"} svg="/poke/ice.svg"           posini={[160, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"normal"} svg="/poke/normal.svg"     posini={[240, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"poison"} svg="/poke/poison.svg"     posini={[320, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"psychic"} svg="/poke/psychic.svg"   posini={[400, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"steel"} svg="/poke/steel.svg"       posini={[480, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
          
           
           </div>
@@ -101,7 +336,36 @@
               <div className=" w-[568px] h-[319px] top-[80px] left-[40px] bg-[#282c34] flex absolute rounded-[20px] shadow-custom-blue" ></div>
             </div>
           </div>
-          <div className="w-[676px] h-[205px] top-[230px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-Lcustom-blue " />
+
+
+          <div id="ventanaDos" className="w-[676px] h-[205px] specialgrid top-[230px] left-[955px] bg-[#282c34] border border-solid border-black absolute rounded-[20px] shadow-Lcustom-blue " >
+          <Svgs2 ids={"electric2"} svg="/poke/electric.svg" />
+          <Svgs2 ids={"bug2"} svg="/poke/bug.svg"           />
+          <Svgs2 ids={"water2"} svg="/poke/water.svg"       />
+          <Svgs2 ids={"ground2"} svg="/poke/ground.svg"     />
+          <Svgs2 ids={"dragon2"} svg="/poke/dragon.svg"     />
+          <Svgs2 ids={"dark2"} svg="/poke/dark.svg"         />
+
+
+
+          <Svgs2 ids={"fairy2"} svg="/poke/fairy.svg"      />
+          <Svgs2 ids={"fighting2"} svg="/poke/fighting.svg"/>
+          <Svgs2 ids={"fire2"} svg="/poke/fire.svg"        />
+          <Svgs2 ids={"flying2"} svg="/poke/flying.svg"    />
+          <Svgs2 ids={"ghost2"} svg="/poke/ghost.svg"      />
+          <Svgs2 ids={"grass2"} svg="/poke/grass.svg"      />
+
+
+
+          <Svgs2 ids={"ice2"} svg="/poke/ice.svg"           />
+          <Svgs2 ids={"normal2"} svg="/poke/normal.svg"     />
+          <Svgs2 ids={"poison2"} svg="/poke/poison.svg"     />
+          <Svgs2 ids={"psychic2"} svg="/poke/psychic.svg"   />
+          <Svgs2 ids={"steel2"} svg="/poke/steel.svg"       />
+          <Svgs2 ids={"rock2"} svg="/poke/rock.svg"       />
+          </div>
+
+
           <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue" />
           <img className="absolute w-[215px] h-[215px] top-[758px] left-[580px]" alt="Vector" src="vector-6.svg"/>
           <img className="absolute w-[149px] h-[75px] top-[742px] left-[955px]" alt="Group" src="group-5.png" />

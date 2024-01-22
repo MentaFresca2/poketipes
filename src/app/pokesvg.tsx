@@ -5,12 +5,12 @@ type SvgsProps = {
   svg: string;
   posini: number[];
   cuantos:number;
-  onPulsado: (newPulsado: boolean) => void;
-  
+  onPulsado: (newPulsado:boolean) => void;
   ids:string;
+  onClick:(ids:string, newPulsado:boolean)=> void;
 };
 
-const Svgs: React.FC<SvgsProps> = ({ svg, posini, cuantos, ids, onPulsado}) => {
+const Svgs: React.FC<SvgsProps> = ({ svg, posini, cuantos, ids, onPulsado,onClick}) => {
   
   const pos1:number[] = [255,805];
   const pos2:number[] = [355,805];
@@ -18,6 +18,7 @@ const Svgs: React.FC<SvgsProps> = ({ svg, posini, cuantos, ids, onPulsado}) => {
   const [pulsado, setpulsado] = useState<boolean>(false);
   const [posini2, setposini2] = useState<number[]>([130, 330]);
   const clicked = (event:any)=>{
+
     var id:string = event.currentTarget.id;
     
     
@@ -34,16 +35,8 @@ const Svgs: React.FC<SvgsProps> = ({ svg, posini, cuantos, ids, onPulsado}) => {
     setpulsado(true);
     
     }
-   
+    onClick(ids,pulsado)
   }
-
-
-
-
-
-
-
-
 
 
 
@@ -69,6 +62,7 @@ const Svgs: React.FC<SvgsProps> = ({ svg, posini, cuantos, ids, onPulsado}) => {
 
   return (
     <div
+      data-active={pulsado}
       id={ids}
       onClick={clicked}
       style={{ left: `${posini2[0]}px`, top: `${posini2[1]}px`,filter:"brightness(0.3)" }}

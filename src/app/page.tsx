@@ -11,9 +11,25 @@
     };
   };
   
-  function getTypesWeakerThanOne(typeChart: TypeChart, actual: string): string[] {
+  function getTypesWeakerThanOne(typeChart: TypeChart, actual: string, resiste:boolean, borrar:boolean): string[] {
     const weakerTypes: string[] = [];
+    if(!borrar){
+    if(resiste){
+    for (const attackerType in typeChart) {
+      const defenderTypes = typeChart[attackerType];
   
+      
+      if (attackerType === actual) {
+        for (const defenderType in defenderTypes) {
+          if (defenderTypes[defenderType] > 1) {
+            weakerTypes.push(defenderType);
+          }
+        }
+      }
+    }
+  
+    return Array.from(new Set(weakerTypes));
+  }else{
     for (const attackerType in typeChart) {
       const defenderTypes = typeChart[attackerType];
   
@@ -28,7 +44,28 @@
     }
   
     return Array.from(new Set(weakerTypes));
-  }
+
+  }}else{
+
+    for (const attackerType in typeChart) {
+      const defenderTypes = typeChart[attackerType];
+  
+      
+      if (attackerType === actual) {
+        for (const defenderType in defenderTypes) {
+          if (defenderTypes[defenderType] < 1 || defenderTypes[defenderType] > 1 || defenderTypes[defenderType] == 1) {
+            weakerTypes.push(defenderType);
+          }
+        }
+      }
+    }
+  
+    return Array.from(new Set(weakerTypes));
+
+
+
+
+  }}
   
   export default function Home(){
     const [mostrado, setmostrado] = useState<boolean>(true)
@@ -40,6 +77,11 @@
       
 
     }
+const borrar = true;
+const noborrar = false;
+
+  const [resiste, setResiste] = useState<boolean>(true)
+
   const [listaElemento, setListaElemento] = useState<Record<string,string | null>>({})
 
   const [elemento, setElemento] = useState<HTMLElement | null>(null);
@@ -71,7 +113,7 @@
 
 
 
-
+/*
 
 
     const ventana = document.getElementById(ventanaid);
@@ -93,17 +135,38 @@
     const rock2 = document.getElementById("rock2");
     const steel2 = document.getElementById("steel2");
     const water2 = document.getElementById("water2");
- 
+ */
     
 
     var json:TypeChart = poketipes;
+    console.log(listaElemento)
+    for (var elements in listaElemento) {
     
-if(!mostrado){
+      if(listaElemento[elements] == null){
+          
+      const mostrar = getTypesWeakerThanOne(json, elements,resiste,borrar)
+        
+          
+      for (var x in mostrar){
+        
+        var actual = document.getElementById((mostrar[x]) + "2");
+        if(actual){
+            actual.style.display = "none"; 
+          }
+        }
+      }
+    }
+  
+  
+    
+  
+  
+  
   
   for (var elements in listaElemento) {
     if(listaElemento[elements] != null){
         
-    const mostrar = getTypesWeakerThanOne(json, elements)
+    const mostrar = getTypesWeakerThanOne(json, elements, resiste,noborrar)
       
         
     for (var x in mostrar){
@@ -115,127 +178,10 @@ if(!mostrado){
       }
     }
   }
-  setmostrado(true)
-}else{
+  
+
  
   
-  for (var elements in listaElemento) {
-    
-    if(listaElemento[elements] == null){
-        
-    const mostrar = getTypesWeakerThanOne(json, elements)
-      
-        
-    for (var x in mostrar){
-      
-      var actual = document.getElementById((mostrar[x]) + "2");
-      if(actual){
-          actual.style.display = "none"; 
-        }
-      }
-    }
-  }
-
-
-  setmostrado(false)
-
-}
-
-
-
-
-
-
-
-
-
-
-
-   
-   /* for (var elements in listaElemento) {
-    
-      if(elements != null){
-        for (var tipo in json) {
-          json.[tipo]
-
-
-        }
-      }
-    }*/ 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-/*
-    if(listaElemento["electric"] && ventana && flying2 && steel2){
-      flying2.style.display = "flex";
-      steel2.style.display = "flex";
-      
-    }else{
-    if(listaElemento["water"] && ventana && steel2 && fire2 && ice2){
-      ice2.style.display = "flex";
-      fire2.style.display = "flex";
-      steel2.style.display = "flex";
-     
-    }else {
-    if(bug2 && bug2.style.display == "flex"){
-      bug2.style.display =    "none";
-    }if(dark2 && dark2.style.display == "flex"){
-      dark2.style.display =   "none";
-    } if (dragon2 && dragon2.style.display == "flex")
-      {dragon2.style.display =  "none";}
-       if (electric2 && electric2.style.display == "flex")
-      {electric2.style.display =    "none";}
-       if (fairy2 && fairy2.style.display == "flex")
-      {fairy2.style.display =   "none";}
-       if (fighting2 && fighting2.style.display == "flex")
-      {fighting2.style.display =  "none";}
-       if (fire2 && fire2.style.display == "flex")
-      {fire2.style.display =    "none";}
-       if (flying2 && flying2.style.display == "flex") 
-      {flying2.style.display =   "none"; }
-       if (ghost2 && ghost2.style.display == "flex")
-      {ghost2.style.display =  "none";}
-       if (grass2 && grass2.style.display == "flex")
-      {grass2.style.display =    "none";}
-       if (ground2 && ground2.style.display == "flex")
-      {ground2.style.display =   "none";}
-       if (ice2 && ice2.style.display == "flex")
-      {ice2.style.display =  "none";}
-       if (normal2 && normal2.style.display == "flex")
-      {normal2.style.display =    "none";}
-       if (poison2 && poison2.style.display == "flex")
-      {poison2.style.display =   "none";}
-      if (psychic2 && psychic2.style.display == "flex")
-      {psychic2.style.display =  "none";}
-       if (rock2 && rock2.style.display == "flex")
-      {rock2.style.display =    "none";}
-       if (steel2 && steel2.style.display == "flex")
-      {steel2.style.display =   "none";}
-       if (water2 && water2.style.display == "flex")
-      {water2.style.display =  "none";}
-  }
-}
-    */
 
 
 
@@ -246,7 +192,7 @@ if(!mostrado){
 
 
 
-  },[cuantos]);
+  },[cuantos, resiste]);
 
 
 
@@ -321,10 +267,10 @@ const display = true;
             alt="Rectangle"
             src="rectangle-20.svg"
           />
-          <img className="absolute w-[108px] h-[56px] top-[751px] left-[286px]" alt="Rectangle" src="rectangle-8.svg" />
-          <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px]" alt="Rectangle" src="rectangle-7.svg" />
+          <img className="absolute w-[108px] h-[56px] top-[751px] left-[286px] z-10" alt="Rectangle" src="rectangle-8.svg" onClick={()=>{setResiste(true)}}/>
+          <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px] z-10" alt="Rectangle" src="rectangle-7.svg" onClick={()=>{setResiste(false)}}/>
           <div className="absolute w-[650px] h-[469px] top-[242px] left-[87px]">
-            <div className="relative w-[716px] h-[517px] bg-[url(/vector-5.svg)] bg-[100%_100%] bg-no-repeat bg-contain ">
+            <div className="relative w-[716px] h-[517px] z-0 bg-[url(/vector-5.svg)] bg-[100%_100%] bg-no-repeat bg-contain ">
               <div className="absolute w-[30px] h-[29px] top-[420px] left-[38px] bg-[#b21818] rounded-full border-2 border-solid border-[#1e1e1e] shadow-lin" />
               <div className="absolute w-[27px] h-[26px] top-[42px] left-[370px] bg-[#b21919] rounded-full border-2 border-solid border-[#1e1e1e] shadow-lin" />
               <div className="absolute w-[27px] h-[26px] top-[42px] left-[252px] bg-[#b21818] rounded-full border-2 border-solid border-[#1e1e1e] shadow-lin" />
@@ -366,7 +312,14 @@ const display = true;
           </div>
 
 
-          <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue" />
+          <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue  " >
+            <div className='flex content-center items-center justify-center h-[91px]'>
+            
+              <p className='font-font1 text-[60px]'>{resiste?"X2":"1/2"}</p>
+          
+            </div>
+          
+          </div>
           <img className="absolute w-[215px] h-[215px] top-[758px] left-[580px]" alt="Vector" src="vector-6.svg"/>
           <img className="absolute w-[149px] h-[75px] top-[742px] left-[955px]" alt="Group" src="group-5.png" />
           <img className="absolute w-[676px] h-[270px] top-[451px] left-[955px]" alt="Group" src="blu.svg" />

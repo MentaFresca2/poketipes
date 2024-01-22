@@ -315,7 +315,7 @@ const display = true;
           <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue  " >
             <div className='flex content-center items-center justify-center h-[91px]'>
             
-              <p className='font-font1 text-[60px]'>{resiste?"X2":"1/2"}</p>
+              <p className='font-font1 text-[60px]'>{resiste?"X2":"/2"}</p>
           
             </div>
           

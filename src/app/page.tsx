@@ -113,30 +113,6 @@ const noborrar = false;
 
 
 
-/*
-
-
-    const ventana = document.getElementById(ventanaid);
-    const flying2 = document.getElementById("flying2");
-    const bug2 = document.getElementById("bug2");
-    const dark2 = document.getElementById("dark2");
-    const dragon2 = document.getElementById("dragon2");
-    const electric2 = document.getElementById("electric2");
-    const fairy2 = document.getElementById("fairy2");
-    const fighting2 = document.getElementById("fighting2");
-    const fire2 = document.getElementById("fire2");
-    const ghost2 = document.getElementById("ghost2");
-    const grass2 = document.getElementById("grass2");
-    const ground2 = document.getElementById("ground2");
-    const ice2 = document.getElementById("ice2");
-    const normal2 = document.getElementById("normal2");
-    const poison2 = document.getElementById("poison2");
-    const psychic2 = document.getElementById("psychic2");
-    const rock2 = document.getElementById("rock2");
-    const steel2 = document.getElementById("steel2");
-    const water2 = document.getElementById("water2");
- */
-    
 
     var json:TypeChart = poketipes;
     console.log(listaElemento)
@@ -224,39 +200,8 @@ const display = true;
               <div className="absolute w-[100px] h-[28px] top-[795px] left-0 [background:linear-gradient(90deg,rgb(109.44,0,0)_0%,rgba(109.44,0,0,0.57)_51.56%,rgb(109.44,0,0)_100%)]" />
             </div>
           </div>
-          <div className=" h-[20px] w-[20px]" >
-
-
-
-
-
-
-          <Svgs ids={"electric"} svg="/poke/electric.svg" posini={[160, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"bug"} svg="/poke/bug.svg"           posini={[240, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"water"} svg="/poke/water.svg"       posini={[320, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"ground"} svg="/poke/ground.svg"     posini={[400, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"dragon"} svg="/poke/dragon.svg"     posini={[480, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"dark"} svg="/poke/dark.svg"         posini={[560, 330]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-
-
-
-          <Svgs ids={"fairy"} svg="/poke/fairy.svg"       posini={[160, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"fighting"} svg="/poke/fighting.svg" posini={[240, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"fire"} svg="/poke/fire.svg"         posini={[320, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"flying"} svg="/poke/flying.svg"     posini={[400, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"ghost"} svg="/poke/ghost.svg"       posini={[480, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"grass"} svg="/poke/grass.svg"       posini={[560, 430]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-
-
-
-          <Svgs ids={"ice"} svg="/poke/ice.svg"           posini={[160, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"normal"} svg="/poke/normal.svg"     posini={[240, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"poison"} svg="/poke/poison.svg"     posini={[320, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"psychic"} svg="/poke/psychic.svg"   posini={[400, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-          <Svgs ids={"steel"} svg="/poke/steel.svg"       posini={[480, 530]} cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-         
-          
-          </div>
+          <div className=" h-[20px] w-[20px] " />
+ 
           <img
             className="absolute w-[109px] h-[56px] top-[735px] left-[1454px]"
             alt="Rectangle"
@@ -279,7 +224,45 @@ const display = true;
                 <div className="absolute w-[25px] h-[6px] top-[9px] left-0 bg-[#b21919] border-[0.7px] border-solid border-black" />
                 <div className="absolute w-[25px] h-[6px] top-[18px] left-0 bg-[#b21919] border-[0.7px] border-solid border-black" />
               </div>
-              <div className=" w-[568px] h-[319px] top-[80px] left-[40px] bg-[#282c34] flex absolute rounded-[20px] shadow-custom-blue" ></div>
+              <div className=" w-[568px] h-[319px] top-[80px] left-[40px] relative bg-[#282c34] rounded-[20px] shadow-custom-blue " >
+
+              <div className='specialgrid'>
+
+
+
+
+          <Svgs ids={"electric"} svg="/poke/electric.svg" cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"bug"} svg="/poke/bug.svg"           cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"water"} svg="/poke/water.svg"       cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"ground"} svg="/poke/ground.svg"     cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"dragon"} svg="/poke/dragon.svg"     cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"dark"} svg="/poke/dark.svg"         cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+
+
+
+          <Svgs ids={"fairy"} svg="/poke/fairy.svg"       cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"fighting"} svg="/poke/fighting.svg" cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"fire"} svg="/poke/fire.svg"         cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"flying"} svg="/poke/flying.svg"     cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"ghost"} svg="/poke/ghost.svg"       cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"grass"} svg="/poke/grass.svg"       cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+
+
+
+          <Svgs ids={"ice"} svg="/poke/ice.svg"           cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"normal"} svg="/poke/normal.svg"     cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"poison"} svg="/poke/poison.svg"     cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"psychic"} svg="/poke/psychic.svg"   cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+          <Svgs ids={"steel"} svg="/poke/steel.svg"       cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
+         
+
+
+
+
+          </div>
+
+
+              </div>
             </div>
           </div>
 

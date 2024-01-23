@@ -51,7 +51,7 @@ const Svgs: React.FC<SvgsProps> = ({ svg, cuantos, ids, onPulsado,onClick}) => {
       }
     }else{
       
-      const element = document.getElementById(ids);
+      
       if (element ) {
         element.style.filter = "brightness(1)";
       }

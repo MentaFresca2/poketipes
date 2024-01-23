@@ -68,7 +68,7 @@
   }}
   
   export default function Home(){
-    const [mostrado, setmostrado] = useState<boolean>(true)
+    
     
     const [cuantos, setCuantos] = useState<number>(0);
     //cuantos tipos activos hay:
@@ -82,7 +82,10 @@ const noborrar = false;
 
   const [resiste, setResiste] = useState<boolean>(true)
 
-  const [listaElemento, setListaElemento] = useState<Record<string,string | null>>({})
+  const [listaElemento, setListaElemento] = useState<Record<string,string | null>>({
+
+    null:null
+  })
 
   const [elemento, setElemento] = useState<HTMLElement | null>(null);
 
@@ -108,30 +111,29 @@ const noborrar = false;
  
   const ventanaid = "ventanaDos";
   useEffect(() => {
-
+    console.log(listaElemento)
 
 
 
 
 
     var json:TypeChart = poketipes;
-    console.log(listaElemento)
+   
     for (var elements in listaElemento) {
     
-      if(listaElemento[elements] == null){
-          
-      const mostrar = getTypesWeakerThanOne(json, elements,resiste,borrar)
-        
-          
-      for (var x in mostrar){
-        
-        var actual = document.getElementById((mostrar[x]) + "2");
-        if(actual){
-            actual.style.display = "none"; 
-          }
-        }
+      
+
+    const mostrar = getTypesWeakerThanOne(json, elements,resiste,borrar)
+      
+
+    for (var x in mostrar){
+
+    var actual = document.getElementById((mostrar[x]) + "2");
+      if(actual){
+        actual.style.display = "none"; 
       }
-    }
+    }  
+  }
   
   
     
@@ -173,7 +175,7 @@ const noborrar = false;
 
 
 
-const display = true;
+
 
 
 

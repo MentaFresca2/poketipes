@@ -24,11 +24,11 @@
       if (attackerType === actual) {
         for (const defenderType in defenderTypes) {
           if (defenderTypes[defenderType] < 1) {
-            var defenderType2 = defenderType
+            var defenderType2 = defenderType;
             weakerTypes.push(defenderType);
           }
           if(defenderTypes[defenderType] > 1 ){
-            var atackerType = defenderType
+            var atackerType = defenderType;
             strongestTypes.push(defenderType);
 
           }

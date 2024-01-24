@@ -10,7 +10,7 @@
       [defenderType: string]: number;
     };
   };
-  
+
   function getTypesWeakerThanOne(typeChart: TypeChart, actual: string, resiste:boolean, borrar:boolean): string[] {
     const weakerTypes: string[] = [];
     const strongestTypes: string[] = [];
@@ -36,6 +36,7 @@
       }
     }
     if(!resiste){
+      
     return Array.from(new Set(weakerTypes));
 
   }else{return Array.from(new Set(strongestTypes));
@@ -139,7 +140,7 @@ const noborrar = false;
     if(listaElemento[elements] != null){
         
     const mostrar = getTypesWeakerThanOne(json, elements, resiste,noborrar)
-    console.log(mostrar)
+    
       
         
     for (var x in mostrar){

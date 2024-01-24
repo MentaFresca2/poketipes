@@ -4,6 +4,12 @@
   import Svgs2 from "./pokesvg2"
   import poketipes from "./poketipes.json"
   import "./globals.css"
+  
+  type Resultado = {
+    debiles: string[],
+    fuertes: string[],
+    [key: string]: string[]; //por si acaso xd
+};
 
   type TypeChart = {
     [attackerType: string]: {
@@ -11,11 +17,22 @@
     };
   };
 
-  function getTypesWeakerThanOne(typeChart: TypeChart, actual: string, resiste:boolean, borrar:boolean): string[] {
+  function eliminarDuplicados(lista1: string[], lista2: string[]): string[] {
+    
+    lista1 = lista1.filter(function(val) {
+      return lista2.indexOf(val) == -1;
+    });
+    
+    return lista1;
+}
+
+
+
+  function getTypesWeakerThanOne(typeChart: TypeChart, actual: string): any {
     const weakerTypes: string[] = [];
     const strongestTypes: string[] = [];
-    if(!borrar){
-     //resiste = x2 nuevol
+   
+    
 
     for (const attackerType in typeChart) {
       const defenderTypes = typeChart[attackerType];
@@ -35,32 +52,13 @@
         }
       }
     }
-    if(!resiste){
+   
       
-    return Array.from(new Set(weakerTypes));
-
-  }else{return Array.from(new Set(strongestTypes));
-  }}/*arriba crea, abajo borra*/else{
-
-    for (const attackerType in typeChart) {
-      const defenderTypes = typeChart[attackerType];
-  
-      
-      if (attackerType === actual) {
-        for (const defenderType in defenderTypes) {
-          if (defenderTypes[defenderType] < 1 || defenderTypes[defenderType] > 1 || defenderTypes[defenderType] == 1) {
-            weakerTypes.push(defenderType);
-          }
-        }
-      }
-    }
-  
-    return Array.from(new Set(weakerTypes));
-
-
-
-
-  }}
+      return {
+        debiles: Array.from(new Set(weakerTypes)),
+        fuertes: Array.from(new Set(strongestTypes))
+    };
+}
   
   export default function Home(){
     
@@ -72,10 +70,10 @@
       
 
     }
-const borrar = true;
+
 const noborrar = false;
 
-  const [resiste, setResiste] = useState<boolean>(true)
+  const [resiste, setResiste] = useState<boolean>(false)
 
   const [listaElemento, setListaElemento] = useState<Record<string,string | null>>({
 
@@ -108,22 +106,20 @@ const noborrar = false;
   useEffect(() => {
     
 
-
-
-
-
     var json:TypeChart = poketipes;
    
     for (var elements in listaElemento) {
     
       
 
-    const mostrar = getTypesWeakerThanOne(json, elements,resiste,borrar)
-      
+    const mostrar:string[] = ["normal", "fire", "water", "grass", "electric", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dark", "steel", "fairy", "dragon"];
+
+    
 
     for (var x in mostrar){
 
     var actual = document.getElementById((mostrar[x]) + "2");
+
       if(actual){
         actual.style.display = "none"; 
       }
@@ -134,22 +130,40 @@ const noborrar = false;
     
   
   
-  
-  
+ 
+  var debiles:string[] = [];
+  var fuertes:string[] = [];
+  var mostrar2:string[] = [];
   for (var elements in listaElemento) {
-    if(listaElemento[elements] != null){
-        
-    const mostrar = getTypesWeakerThanOne(json, elements, resiste,noborrar)
     
+    if(listaElemento[elements] != null){
+    
+      const operacion:Resultado = getTypesWeakerThanOne(json, elements)
       
-        
-    for (var x in mostrar){
+      operacion.debiles.forEach(debil => {
+        debiles.push(debil)
+      });
+      operacion.fuertes.forEach(fuerte => {
+        fuertes.push(fuerte)
+      });
+
+    
+
       
-      var actual = document.getElementById((mostrar[x]) + "2");
-      if(actual){
-          actual.style.display = "flex" 
-        }
-      }
+      
+      mostrar2 = resiste?eliminarDuplicados(debiles,fuertes):eliminarDuplicados(fuertes,debiles)
+      console.log(mostrar2)
+
+
+    }
+  }
+  for (var x in mostrar2){
+
+    var actual = document.getElementById((mostrar2[x]) + "2");
+    console.log(mostrar2[x])
+    
+    if(actual){
+      actual.style.display = "flex" 
     }
   }
   
@@ -210,8 +224,8 @@ const noborrar = false;
             alt="Rectangle"
             src="rectangle-20.svg"
           />
-          <img className="absolute w-[108px] h-[56px] top-[751px] left-[286px] z-10" alt="Rectangle" src="rectangle-8.svg" onClick={()=>{setResiste(true)}}/>
-          <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px] z-10" alt="Rectangle" src="rectangle-7.svg" onClick={()=>{setResiste(false)}}/>
+          <img className="absolute w-[108px] h-[56px] top-[751px] left-[286px] z-10" alt="Rectangle" src="rectangle-8.svg" onClick={()=>{setResiste(false)}}/>
+          <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px] z-10" alt="Rectangle" src="rectangle-7.svg" onClick={()=>{setResiste(true)}}/>
           <div className="absolute w-[650px] h-[469px] top-[242px] left-[87px]">
             <div className="relative w-[716px] h-[517px] z-0 bg-[url(/vector-5.svg)] bg-[100%_100%] bg-no-repeat bg-contain ">
               <div className="absolute w-[30px] h-[29px] top-[420px] left-[38px] bg-[#b21818] rounded-full border-2 border-solid border-[#1e1e1e] shadow-lin" />
@@ -296,7 +310,7 @@ const noborrar = false;
           <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue  " >
             <div className='flex content-center items-center justify-center h-[91px]'>
             
-              <p className='font-font1 text-[60px]'>{resiste?"X2":"/2"}</p>
+              <p className='font-font1 text-[60px]'>{resiste?"/2":"X2"}</p>
           
             </div>
           

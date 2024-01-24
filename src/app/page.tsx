@@ -13,23 +13,10 @@
   
   function getTypesWeakerThanOne(typeChart: TypeChart, actual: string, resiste:boolean, borrar:boolean): string[] {
     const weakerTypes: string[] = [];
+    const strongestTypes: string[] = [];
     if(!borrar){
-    if(resiste){
-    for (const attackerType in typeChart) {
-      const defenderTypes = typeChart[attackerType];
-  
-      
-      if (attackerType === actual) {
-        for (const defenderType in defenderTypes) {
-          if (defenderTypes[defenderType] > 1) {
-            weakerTypes.push(defenderType);
-          }
-        }
-      }
-    }
-  
-    return Array.from(new Set(weakerTypes));
-  }else{
+     //resiste = x2 nuevol
+
     for (const attackerType in typeChart) {
       const defenderTypes = typeChart[attackerType];
   
@@ -37,15 +24,22 @@
       if (attackerType === actual) {
         for (const defenderType in defenderTypes) {
           if (defenderTypes[defenderType] < 1) {
+            var defenderType2 = defenderType
             weakerTypes.push(defenderType);
+          }
+          if(defenderTypes[defenderType] > 1 ){
+            var atackerType = defenderType
+            strongestTypes.push(defenderType);
+
           }
         }
       }
     }
-  
+    if(!resiste){
     return Array.from(new Set(weakerTypes));
 
-  }}else{
+  }else{return Array.from(new Set(strongestTypes));
+  }}/*arriba crea, abajo borra*/else{
 
     for (const attackerType in typeChart) {
       const defenderTypes = typeChart[attackerType];
@@ -111,7 +105,7 @@ const noborrar = false;
  
   const ventanaid = "ventanaDos";
   useEffect(() => {
-    console.log(listaElemento)
+    
 
 
 
@@ -134,7 +128,7 @@ const noborrar = false;
       }
     }  
   }
-  
+  //Primero borra lo anterior (arriba) luego pinta lo nuevo (abajo)
   
     
   
@@ -145,6 +139,7 @@ const noborrar = false;
     if(listaElemento[elements] != null){
         
     const mostrar = getTypesWeakerThanOne(json, elements, resiste,noborrar)
+    console.log(mostrar)
       
         
     for (var x in mostrar){
@@ -228,7 +223,7 @@ const noborrar = false;
               </div>
               <div className=" w-[568px] h-[319px] top-[80px] left-[40px] relative bg-[#282c34] rounded-[20px] shadow-custom-blue " >
 
-              <div className='specialgrid'>
+              <div className='specialgrid2'>
 
 
 
@@ -256,7 +251,7 @@ const noborrar = false;
           <Svgs ids={"poison"} svg="/poke/poison.svg"     cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
           <Svgs ids={"psychic"} svg="/poke/psychic.svg"   cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
           <Svgs ids={"steel"} svg="/poke/steel.svg"       cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
-         
+          <Svgs ids={"rock"} svg="/poke/rock.svg"         cuantos={cuantos} onPulsado={sitio} onClick={clicked}/>
 
 
 
@@ -293,7 +288,7 @@ const noborrar = false;
           <Svgs2 ids={"poison2"} svg="/poke/poison.svg"     />
           <Svgs2 ids={"psychic2"} svg="/poke/psychic.svg"   />
           <Svgs2 ids={"steel2"} svg="/poke/steel.svg"       />
-          <Svgs2 ids={"rock2"} svg="/poke/rock.svg"       />
+          <Svgs2 ids={"rock2"} svg="/poke/rock.svg"         />
           </div>
 
 

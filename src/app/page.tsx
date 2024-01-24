@@ -133,7 +133,7 @@ const noborrar = false;
  
   var debiles:string[] = [];
   var fuertes:string[] = [];
-  var mostrar2:string[] = [];
+  var mostrar2:string[] = []; //Esto es para que no de errores
   for (var elements in listaElemento) {
     
     if(listaElemento[elements] != null){
@@ -152,7 +152,7 @@ const noborrar = false;
       
       
       mostrar2 = resiste?eliminarDuplicados(debiles,fuertes):eliminarDuplicados(fuertes,debiles)
-      console.log(mostrar2)
+    
 
 
     }
@@ -160,7 +160,7 @@ const noborrar = false;
   for (var x in mostrar2){
 
     var actual = document.getElementById((mostrar2[x]) + "2");
-    console.log(mostrar2[x])
+    
     
     if(actual){
       actual.style.display = "flex" 
@@ -204,7 +204,7 @@ const noborrar = false;
               <div className="absolute w-[31px] h-[31px] top-[11px] left-[356px] bg-gradient-radial-gre rounded-full border-[3px] border-solid border-[#1e1e1e]" />
               <div className="bg-gradient-radial-red absolute w-[31px] h-[31px] top-[11px] left-[164px] bg-[#830f0f] rounded-full border-[3px] border-solid border-[#1e1e1e]" />
             </div>
-            <img className="absolute w-[804px] h-[76px] top-[100px] left-0" alt="Vector" src="vector-1.svg" />
+            <img className="absolute w-[804px] h-[100px] top-[92px] left-0" alt="Vector" src="vector-1dos.svg" />
             <img className="absolute w-[782px] h-[76px] top-[100px] left-[879px]" alt="Vector" src="vector-4.svg" />
             <img className="absolute w-[768px] h-[175px] top-[-2px] left-[893px]" alt="Vector" src="vector-3.svg" />
             <div className="border-b-2 border-darkred absolute w-[100px] h-[910px] top-0 left-[793px] [background:linear-gradient(90deg,rgb(180,19,19)_0%,rgb(194.44,26.74,26.74)_51.04%,rgb(180,19,19)_100%)] ">

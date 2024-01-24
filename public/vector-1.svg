@@ -1,3 +1,10 @@
-<svg width="944" height="90" viewBox="0 0 944 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M-145 88H501L655 2H944" stroke="#6D0000" stroke-width="3"/>
+<svg width="944" height="90" viewBox="0 0 944 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="f3" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="0" dy="5" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+<path d="M-145 88H501L655 2H944" stroke="#6D0000" stroke-width="3" filter="url(#f3)" />
 </svg>

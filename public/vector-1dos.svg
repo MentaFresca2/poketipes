@@ -13,7 +13,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
    <defs>
-    <filter id="f3" x="0" y="-0.01" width="200%" height="200%">
+    <filter id="f3" x="0" y="-0.015" width="200%" height="200%">
       <feOffset result="offOut" in="SourceAlpha" dx="0" dy="5" />
       <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
       <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />

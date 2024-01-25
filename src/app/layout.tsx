@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'PokeCalculator',
-  description: 'Made by me!',
+  description: 'Made by MentaFresca2',
 }
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className=' bg-[#1e1e1e]'>
+    <html lang="en" className=' bg-[#1e1e1e] w-[2000px]'>
       
       <body className={inter.className}>{children}</body>
     </html>

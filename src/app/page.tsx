@@ -121,7 +121,9 @@ const noborrar = false;
     var actual = document.getElementById((mostrar[x]) + "2");
 
       if(actual){
-        actual.style.display = "none"; 
+        actual.classList.remove("animacionaparicion");
+        actual.style.display = "none";
+        
       }
     }  
   }
@@ -159,11 +161,13 @@ const noborrar = false;
   }
   for (var x in mostrar2){
 
-    var actual = document.getElementById((mostrar2[x]) + "2");
+    var actual:HTMLElement|null = document.getElementById((mostrar2[x]) + "2");
     
     
     if(actual){
-      actual.style.display = "flex" 
+      actual.style.display = "flex" ;
+      actual.classList.add("animacionaparicion")
+      actual.style.opacity = "1" ;
     }
   }
   
@@ -190,7 +194,7 @@ const noborrar = false;
 
 
     return (
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center overflow-auto">
       <div className="bg-[#1E1E1E]">
         
       <div className="bg-[#ce1313] w-[1661px] h-[912px] border-[#6D0000] border-2">

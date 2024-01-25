@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 
 @layer components {
   .all-\[unset\] {
@@ -22,6 +24,7 @@
     justify-items: center;
     padding: 0 10px 10px 10px;
     }
+
   @font-face {
     font-family: 'font1';
     src: url('./assets/font1.otf') format('opentype');
@@ -31,10 +34,48 @@
     font-family: 'font1', sans-serif;
   }
 }
+@layer animaciones{
+  .animacionbrillo{
+    transition: filter 0.2s ease-in-out;
+
+
+  }
+
+
+  .animacionaparicion{
+    opacity: 0;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animacionout{
+    animation: fadeOut;
+
+
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .transitions{
+    transition: opacity 0.3s ease;
+  }
+
+  
+}
 body {
-    margin: 0;
+    width: auto;
    
   }
-#slider {
-    display: none;
-}
+

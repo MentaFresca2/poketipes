@@ -27,7 +27,7 @@
 
   @font-face {
     font-family: 'font1';
-    src: url('./assets/font1.otf') format('opentype');
+    src: url('./assets/font1.ttf') format('opentype');
   }
   
   .font-font1 {
@@ -71,8 +71,106 @@
   .transitions{
     transition: opacity 0.3s ease;
   }
+  .glitchtext{
+    position: absolute;
 
-  
+    animation: glitch 0.3s linear alternate-reverse;
+   
+  }
+  @keyframes glitch {
+    0% {
+      clip: rect(0, 140px, 60px, 0);
+      transform: skewY(0.5deg);
+    }
+    5% {
+      clip: rect(30px, 140px, 90px, 0);
+      transform: skewY(-0.8deg);
+    }
+    10% {
+      clip: rect(70px, 140px, 30px, 0);
+      transform: skewY(0.2deg);
+    }
+    15% {
+      clip: rect(40px, 140px, 50px, 0);
+      transform: skewY(-1deg);
+    }
+    20% {
+      clip: rect(60px, 140px, 20px, 0);
+      transform: skewY(0.4deg);
+    }
+    25% {
+      clip: rect(80px, 140px, 70px, 0);
+      transform: skewY(-0.6deg);
+    }
+    30% {
+      clip: rect(10px, 140px, 60px, 0);
+      transform: skewY(1deg);
+    }
+    35% {
+      clip: rect(50px, 140px, 80px, 0);
+      transform: skewY(-0.3deg);
+    }
+    40% {
+      clip: rect(90px, 140px, 40px, 0);
+      transform: skewY(0.7deg);
+    }
+    45% {
+      clip: rect(100px, 140px, 20px, 0);
+      transform: skewY(-0.5deg);
+    }
+    50% {
+      clip: rect(120px, 140px, 50px, 0);
+      transform: skewY(0.3deg);
+    }
+    55% {
+      clip: rect(70px, 140px, 70px, 0);
+      transform: skewY(-0.4deg);
+    }
+    60% {
+      clip: rect(90px, 140px, 30px, 0);
+      transform: skewY(0.6deg);
+    }
+    65% {
+      clip: rect(80px, 140px, 40px, 0);
+      transform: skewY(-0.2deg);
+    }
+    70% {
+      clip: rect(110px, 140px, 0, 0);
+      transform: skewY(0.8deg);
+    }
+    75% {
+      clip: rect(20px, 140px, 90px, 0);
+      transform: skewY(-0.7deg);
+    }
+    80% {
+      clip: rect(100px, 140px, 10px, 0);
+      transform: skewY(0.5deg);
+    }
+    85% {
+      clip: rect(40px, 140px, 50px, 0);
+      transform: skewY(-0.9deg);
+    }
+    90% {
+      clip: rect(80px, 140px, 20px, 0);
+      transform: skewY(0.1deg);
+    }
+    95% {
+      clip: rect(60px, 140px, 70px, 0);
+      transform: skewY(-0.6deg);
+    }
+    100% {
+      clip: rect(50px, 140px, 30px, 0);
+      transform: skewY(0.2deg);
+    }
+  }
+  .filtro{
+    filter: sepia(0.3) hue-rotate(10deg) grayscale(0.2);
+
+  }
+  .glow-text {
+   
+    text-shadow: 0 0 10px rgba(62, 165, 67, 0.5); 
+  }
 }
 body {
     width: auto;

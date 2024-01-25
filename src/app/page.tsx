@@ -228,8 +228,8 @@ const noborrar = false;
             alt="Rectangle"
             src="rectangle-20.svg"
           />
-          <img className="absolute w-[108px] h-[56px] top-[751px] left-[286px] z-10" alt="Rectangle" src="rectangle-8.svg" onClick={()=>{setResiste(false)}}/>
-          <img className="absolute w-[108px] h-[56px] top-[751px] left-[177px] z-10" alt="Rectangle" src="rectangle-7.svg" onClick={()=>{setResiste(true)}}/>
+          <img className="absolute w-[88px] h-[26px]  top-[751px] left-[286px] z-10 cursor-pointer" alt="Rectangle" src="rectangle-8.svg" onClick={()=>{setResiste(false);document.getElementById("glitched")?.classList.remove("glitchtext");void document.getElementById("glitched")?.offsetWidth; document.getElementById("glitched")?.classList.add("glitchtext")}}/>
+          <img className="absolute w-[88px] h-[26px] top-[751px] left-[177px] z-10 cursor-pointer" alt="Rectangle" src="rectangle-7.svg" onClick={()=>{setResiste(true); document.getElementById("glitched")?.classList.remove("glitchtext");void document.getElementById("glitched")?.offsetWidth; document.getElementById("glitched")?.classList.add("glitchtext")}}/>
           <div className="absolute w-[650px] h-[469px] top-[242px] left-[87px]">
             <div className="relative w-[716px] h-[517px] z-0 bg-[url(/vector-5.svg)] bg-[100%_100%] bg-no-repeat bg-contain ">
               <div className="absolute w-[30px] h-[29px] top-[420px] left-[38px] bg-[#b21818] rounded-full border-2 border-solid border-[#1e1e1e] shadow-lin" />
@@ -311,10 +311,10 @@ const noborrar = false;
           </div>
 
 
-          <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#516349] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue  " >
-            <div className='flex content-center items-center justify-center h-[91px]'>
+          <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#456338] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue " >
+            <div className='flex content-center items-center justify-center h-[91px] '>
             
-              <p className='font-font1 text-[60px]'>{resiste?"/2":"X2"}</p>
+              <p id='glitched' className='font-font1 text-[60px] glitchtext  glow-text text-[#101f15]'>{resiste?"/2":"X2"}</p>
           
             </div>
           

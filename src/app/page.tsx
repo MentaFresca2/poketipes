@@ -194,7 +194,7 @@ const noborrar = false;
 
 
     return (
-      <div className="flex flex-row justify-center overflow-auto">
+      <div className="flex flex-row justify-center overflow-hidden">
       <div className="bg-[#1E1E1E]">
         
       <div className="bg-[#ce1313] w-[1661px] h-[912px] border-[#6D0000] border-2">
@@ -314,7 +314,7 @@ const noborrar = false;
           <div className="w-[258px] h-[91px] top-[804px] left-[225px] bg-[#456338] border border-solid border-black absolute rounded-[20px] shadow-LLcustom-blue " >
             <div className='flex content-center items-center justify-center h-[91px] '>
             
-              <p id='glitched' className='font-font1 text-[60px] glitchtext  glow-text text-[#101f15]'>{resiste?"/2":"X2"}</p>
+              <p id='glitched' className='font-font1 text-[60px] glitchtext text-[#101f15] cursor-default'>{resiste?"/2":"X2"}</p>
           
             </div>
           

@@ -195,7 +195,7 @@ const noborrar = false;
 
     return (
       
-      <div className="bg-[#1E1E1E] relative items-center w-[1661px] h-[912px]">
+      <div className="bg-[#1E1E1E] relative items-center w-[1661px] h-[912px] mt-1">
         
       <div className="bg-[#ce1313] w-[inherit] h-auto relative border-[#6D0000] border-2">
         <div className="relative h-[912px]" >
@@ -211,7 +211,7 @@ const noborrar = false;
             <img className="absolute w-[804px] h-[100px] top-[92px] left-0" alt="Vector" src="vector-1dos.svg" />
             <img className="absolute w-[782px] h-[76px] top-[100px] left-[879px]" alt="Vector" src="vector-4.svg" />
             <img className="absolute w-[768px] h-[175px] top-[-2px] left-[893px]" alt="Vector" src="vector-3.svg" />
-            <div className="border-b-2 border-darkred absolute w-[100px] h-[910px] top-0 left-[793px] [background:linear-gradient(90deg,rgb(180,19,19)_0%,rgb(194.44,26.74,26.74)_51.04%,rgb(180,19,19)_100%)] ">
+            <div className="border-b-2 border-darkred absolute w-[100px] h-[914px] top-0 left-[793px] [background:linear-gradient(90deg,rgb(180,19,19)_0%,rgb(194.44,26.74,26.74)_51.04%,rgb(180,19,19)_100%)] ">
               <div className="absolute w-[100px] h-[27px] top-[161px] left-0 [background:linear-gradient(90deg,rgb(109.44,0,0)_0%,rgb(109.44,0,0)_0.01%,rgba(109.44,0,0,0.57)_49.48%,rgb(109.44,0,0)_100%)]" />
               <div className="absolute w-[100px] h-[28px] top-[795px] left-0 [background:linear-gradient(90deg,rgb(109.44,0,0)_0%,rgba(109.44,0,0,0.57)_51.56%,rgb(109.44,0,0)_100%)]" />
             </div>

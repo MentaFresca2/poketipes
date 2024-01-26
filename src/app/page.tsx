@@ -194,10 +194,10 @@ const noborrar = false;
 
 
     return (
-      <div className="flex flex-row justify-center overflow-hidden">
-      <div className="bg-[#1E1E1E]">
+      <div className="flex flex-row justify-center overflow-hidden  w-[100%] h-[100%]">
+      <div className="bg-[#1E1E1E] flex justify-center w-[100%] h-[100%]">
         
-      <div className="bg-[#ce1313] w-[1661px] h-[912px] border-[#6D0000] border-2">
+      <div className="bg-[#ce1313] w-[89.5%] h-auto absolute border-[#6D0000] border-2">
         <div className="relative h-[912px]" >
           <div className="absolute w-[42px] h-[42px] top-[767px] left-[121px] border-2 border-[#000000] bg-[#141414] rounded-[21px] shadow-plane" />
           <div className="absolute w-[31px] h-[32px] top-[776px] left-[1594px] bg-[#bca900] rounded-full border-[2px] border-solid border-[#000000] shadow-plane" />

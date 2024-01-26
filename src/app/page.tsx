@@ -197,7 +197,7 @@ const noborrar = false;
       
       <div className="bg-[#1E1E1E] relative items-center w-[1661px] h-[912px]">
         
-      <div className="bg-[#ce1313] w-auto h-auto relative border-[#6D0000] border-2">
+      <div className="bg-[#ce1313] w-[inherit] h-auto relative border-[#6D0000] border-2">
         <div className="relative h-[912px]" >
           <div className="absolute w-[42px] h-[42px] top-[767px] left-[121px] border-2 border-[#000000] bg-[#141414] rounded-[21px] shadow-plane" />
           <div className="absolute w-[31px] h-[32px] top-[776px] left-[1594px] bg-[#bca900] rounded-full border-[2px] border-solid border-[#000000] shadow-plane" />
